@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS-CALCULATOR</title>
+	<link rel="icon" href="https://icons.iconarchive.com/icons/wineass/ios7-redesign/256/Calculator-icon.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<style>
+  		body{
+	font-family: 'Open Sans',sans-serif;
+	
+}
+.heading{
+	width: 600px;
+	height: 90px;
+	margin:  8px auto;
+	border-radius: 3%;
+	
+}
+.topic{
+	text-align: center;
+	align-self: center;
+	margin: 1px auto;
+	color: white;
+	font-family: "Sofia";
+	color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+	font-size: 33px;
+
+}
+#gt:hover
+{
+	border-radius: 3%;
+	background-color: #2E4053;
+	color: white;
+}
+#tw:hover
+{
+	border-radius: 3%;
+	background-color: #2E4053;
+	color: white;
+}
+#ins:hover
+{
+	border-radius: 3%;
+	background-color: #2E4053;
+	color: white;
+}
+.list{
+	background-color: #3E4049;
+}
+
+.container
+{
+	width: 1000px;
+	height: 550px;
+	background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&w=1000&q=80");
+	opacity: 1;
+	margin: 30px auto ;
+	border-radius: 3%;
+	box-shadow: 1px 1px 8px 8px white;
+}
+
+#heading{
+	align-self: center;
+	color: red;
+}
+#calculator{
+	width: 320px;
+	height: 520px;
+	background-color: #993333;
+	color: white;
+	margin: 0 auto;
+	top: 20px;
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 1px 1px 8px 8px black;	
+}
+
+#result{
+	height: 120px;
+	color: white;
+
+}
+#history{
+	text-align: right;
+	height: 20px;
+	color: #ff9900;
+	margin: 0 20px;
+	padding-top: 10px;
+	font-size: 20px;
+	opacity: 0.9;
+}
+#output{
+	text-align: right;
+	height: 60px;
+	margin: 10px 20px;
+	color: white;
+	font-size: 30px;
+
+}
+#keyboard{
+	height: 400px;
+	color: white;
+	background-color: #212F3C  ;
+
+}
+.operator, .number, .empty{
+	width: 50px;
+	height: 50px;
+	margin: 15px;
+	float: left;
+	border-radius: 50%;
+	border-width: 0;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+.number , .empty{
+	background-color:  #212F3C  ;
+}
+
+.number, .operator{
+	cursor: pointer;
+}
+.operator:active, .number:active{
+	font-size: 13px;
+}
+.operator:focus, .number:focus, .empty:focus{
+	outline: 0;
+}
+button:nth-child(4){
+	font-size: 30px;
+	color: orange;
+	background-color:  #212F3C ;
+}
+button:nth-child(8){
+	font-size: 30px;
+	color: blue;
+	background-color:  #212F3C ;
+}
+button:nth-child(12){
+	font-size: 30px;
+	color: red;
+	background-color:  #212F3C ;
+}
+button:nth-child(16){
+	font-size: 30px;
+	color: yellow;
+	background-color:  #212F3C ;
+}
+button:nth-child(20){
+	font-size: 30px;
+	align-self: center;
+	color: green;
+	background-color:  #212F3C ;
+}
+button:nth-child(1){
+	font-size: 20px;
+	color: #e60514;
+	background-color:  #212F3C ;
+}
+button:nth-child(2){
+	font-size: 20px;
+	color: #e60514;
+	background-color: #212F3C;
+}
+button:nth-child(3){
+	font-size: 20px;
+	color: lightgreen;
+	background-color:  #212F3C;
+}
+animation: mymove 7s infinite;
+@keyframes mymove {
+  50% {box-shadow: 1px 1px 8px 8px #212F3C;}
+}
+.number:hover{
+	box-shadow: 1px 1px 8px 8px white;
+	background-color: black;
+}
+button:nth-child(1):hover{
+	box-shadow: 1px 1px 8px 8px red;
+	background-color: black;
+}
+button:nth-child(2):hover{
+	box-shadow: 1px 1px 8px 8px red;
+	background-color: black;
+}
+button:nth-child(12):hover{
+	box-shadow: 1px 1px 8px 8px red;
+	background-color: black;
+}
+button:nth-child(3):hover{
+	box-shadow: 1px 1px 8px 8px lightgreen;
+	background-color: black;
+}
+button:nth-child(4):hover{
+	box-shadow: 1px 1px 8px 8px orange;
+	background-color: black;
+}
+button:nth-child(8):hover{
+	box-shadow: 1px 1px 8px 8px blue;
+	background-color: black;
+}
+button:nth-child(16):hover{
+	box-shadow: 1px 1px 8px 8px yellow;
+	background-color: black;
+}
+button:nth-child(20):hover{
+	box-shadow: 1px 1px 8px 8px green;
+	background-color: black;
+}
+  	</style>
+</head>
+<body background="https://www.psd-dude.com/tutorials/resources-images/over-100-amazing-wood-textures/wood-texture-background-box.jpg">
+	<div class="heading">
+		<div class="topic" style="font-size: 60px"><span style="color: green">C</span><span style="color: red">A</span><span style="color: yellow">L</span><span style="color:orange">C</span><span style="color: blue">U</span><span style="color: red">L</span><span style="color: yellow">A</span><span style="color:green">T</span><span style="color: blue">O</span><span style="color: orange">R</span></a></div><br>
+		<div style="font-size: 20px"><marquee>||....Welcome to the Online Calculator....||</marquee></div>
+	</div>
+	<div class="container">
+		<div id="calculator">
+				<div id="result">
+					<div id="history">
+					    <p id="history-value"></p>
+					</div>
+					<div id="output">
+						<p id="output-value"></p>
+					</div>
+				</div>
+				<div id="keyboard">
+					<button class="operator" id="clear">C</button>
+					<button class="operator" id="backspace">CE</button>
+					<button class="operator" id="%">%</button>
+					<button class="operator" id="/">&#247;</button>
+					<button class="number" id="7">7</button>
+					<button class="number" id="8">8</button>
+					<button class="number" id="9">9</button>
+					<button class="operator" id="*">&times;</button>
+					<button class="number" id="4">4</button>
+					<button class="number" id="5">5</button>
+					<button class="number" id="6">6</button>
+					<button class="operator" id="-">-</button>
+					<button class="number" id="1">1</button>
+					<button class="number" id="2">2</button>
+					<button class="number" id="3">3</button>
+					<button class="operator" id="+">+</button>
+					<button class="empty" id="empty"></button>
+					<button class="number" id="0">0</button>
+					<button class="empty" id="empty"></button>
+					<button class="operator" id="=">=</button>
+				</div>
+			</div>
+	</div>
+<script type="text/javascript">
+	function getHistory(){
+	return document.getElementById("history-value").innerText;
+}
+function printHistory(num){
+	document.getElementById("history-value").innerText=num;
+}
+function getOutput(){
+	return document.getElementById("output-value").innerText;
+}
+function printOutput(num){
+	if(num==""){
+		document.getElementById("output-value").innerText=num;
+	}
+	else{
+		document.getElementById("output-value").innerText=getFormattedNumber(num);
+	}	
+}
+function getFormattedNumber(num){
+	if(num=="-"){
+		return "";
+	}
+	var n = Number(num);
+	var value = n.toLocaleString("en");
+	return value;
+}
+function reverseNumberFormat(num){
+	return Number(num.replace(/,/g,''));
+}
+var operator = document.getElementsByClassName("operator");
+for(var i =0;i<operator.length;i++){
+	operator[i].addEventListener('click',function(){
+		if(this.id=="clear"){
+			printHistory("");
+			printOutput("");
+		}
+		else if(this.id=="backspace"){
+			var output=reverseNumberFormat(getOutput()).toString();
+			if(output){//if output has a value
+				output= output.substr(0,output.length-1);
+				printOutput(output);
+			}
+		}
+		else{
+			var output=getOutput();
+			var history=getHistory();
+			if(output==""&&history!=""){
+				if(isNaN(history[history.length-1])){
+					history= history.substr(0,history.length-1);
+				}
+			}
+			if(output!="" || history!=""){
+				output= output==""?output:reverseNumberFormat(output);
+				history=history+output;
+				if(this.id=="="){
+					var result=eval(history);
+					printOutput(result);
+					printHistory("");
+				}
+				else{
+					history=history+this.id;
+					printHistory(history);
+					printOutput("");
+				}
+			}
+		}
+		
+	});
+}
+var number = document.getElementsByClassName("number");
+for(var i =0;i<number.length;i++){
+	number[i].addEventListener('click',function(){
+		var output=reverseNumberFormat(getOutput());
+		if(output!=NaN){ //if output is a number
+			output=output+this.id;
+			printOutput(output);
+		}
+	});
+}
+</script>
+</body>
+</html>
